@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="Website Icon" href="https://i.pinimg.com/564x/f8/52/9c/f8529c3ee32672146fb127cf1e27af54.jpg">
+</head>
+<!--<body>
+    <div class="navbar"><h1>Heart Disease Prediction</h1></div>
+</body>
+</html> -->
+
+
+<body>
+ <div class="login">
+	<h1>Heart Disease Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <!-- <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="experience" placeholder="Experience" required="required" />
+        <input type="text" name="test_score" placeholder="Test Score" required="required" />
+		<input type="text" name="interview_score" placeholder="Interview Score" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form> -->
+
+    <form action="{{url_for('predict')}}"method="post">
+      <input type="text" name="age" placeholder="Enter your age" class="input" required="required" />
+       <input type="text" name="cp" placeholder="Chest pain(1-4)" class="input" required="required" />
+      <input type="text" name="BP" placeholder="Blood Pressure" class="input" required="required" />
+      <input type="text" name="chol" placeholder="Cholestrol level" class="input" required="required" />
+      <input type="text" name="max_HR" placeholder="Maximum Heart rate achieved" class="input" required="required" />
+      <input type="text" name="oldpeak" placeholder="ST depression induced by exercise relative to rest" class="input" required="required" />
+      <input type="text" name="ca" placeholder=" number of major vessels (0-3) colored by fluoroscopy" class="input" required="required" />
+
+      <input type="text" name="thal" placeholder="thalassemia (3 = normal; 6 = fixed defect; 7 = reversable defect)" class="input" required="required" />
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>
+
+    
+
+    <br>
+    <br>
+    {{ prediction_text }}
+ </div>
+
+        
+</body>
+</html>
